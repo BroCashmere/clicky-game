@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "cloud",
+    "image": "./assets/cloud.jpg"
+  },
+  {
+    "id": 2,
+    "name": "aerith",
+    "image": "./assets/aerith.jpg"
+  },
+  {
+    "id": 3,
+    "name": "barret",
+    "image": "./assets/barret.jpg"
+  },
+  {
+    "id": 4,
+    "name": "cait",
+    "image": "./assets/cait.jpg"
+  },
+  {
+    "id": 5,
+    "name": "cid",
+    "image": "./assets/cid.jpg"
+  },
+  {
+    "id": 6,
+    "name": "red",
+    "image": "./assets/red.jpg"
+  },
+  {
+    "id": 7,
+    "name": "sephiroth",
+    "image": "./assets/sephiroth.jpg"
+  },
+  {
+    "id": 8,
+    "name": "tifa",
+    "image": "./assets/tifa.jpg"
+  },
+  {
+    "id": 9,
+    "name": "vincent",
+    "image": "./assets/vincent.jpg"
+  },
+  {
+    "id": 10,
+    "name": "yuffie",
+    "image": "./assets/yuffie.jpg"
+  },
+  {
+    "id": 11,
+    "name": "zack",
+    "image": "./assets/zack.jpg"
+  },
+  {
+    "id": 12,
+    "name": "selphie",
+    "image": "./assets/selphie.jpg"
+  }
+]
