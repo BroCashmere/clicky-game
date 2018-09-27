@@ -8,8 +8,6 @@ Deployment
 
 Heroku Link: https://clicky-game-bc2018.herokuapp.com/
 
-Built With
-
 Technologies Used/ Required
 
 React
