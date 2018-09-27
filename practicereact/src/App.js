@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import shuffle from "shuffle-array"
 import FriendCard from "./components/FriendCard";
 import TitleCard from "./components/TitleCard";
 import Wrapper from "./components/Wrapper";
@@ -11,22 +10,21 @@ class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     friends: friends,
-    highScore: 0,
-    score: 0,
     notSelected: friends,
+    score: 0,
+    highScore: 0,
     message: "Don't pick the same one twice! Select any image to start!"
   };
 
   onClick = id => {
     let clickId = this.state.notSelected.find(friend => friend.id === id);
-
     if (clickId === undefined) {
       if (this.state.score > this.state.highScore) {
         this.setState({
           friends: friends,
+          notSelected: friends,
           highScore: this.state.score,
           score: 0,
-          notSelected: friends,
           message: "New high score!  Try again!"
         });
         console.log("route 1")
@@ -45,15 +43,14 @@ class App extends Component {
     else {
       this.setState({
         friends: friends,
-        score: this.state.score + 1,
         notSelected: this.state.notSelected.filter(friend => friend.id !== id),
+        score: this.state.score + 1,
         message: "Correct!"
       });
       console.log("route 3")
     }
-    this.setState({
-      friends: shuffle(this.state.friends)
-    });
+    this.state.friends.sort(() => Math.random() - 0.5)
+
   }
 
   render() {
