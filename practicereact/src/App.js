@@ -17,8 +17,8 @@ class App extends Component {
   };
 
   onClick = id => {
-    let clickId = this.state.notSelected.find(friend => friend.id === id);
-    if (clickId === undefined) {
+    let selectedId = this.state.notSelected.find(friend => friend.id === id);
+    if (selectedId === undefined) {
       if (this.state.score > this.state.highScore) {
         this.setState({
           friends: friends,
