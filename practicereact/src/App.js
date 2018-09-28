@@ -18,7 +18,18 @@ class App extends Component {
 
   onClick = id => {
     let selectedId = this.state.notSelected.find(friend => friend.id === id);
-    if (selectedId === undefined) {
+
+    if (this.state.notSelected.includes(selectedId)) {
+      this.setState({
+        friends,
+        notSelected: this.state.notSelected.filter(friend => friend.id !== id),
+        score: this.state.score + 1,
+        message: "Correct!"
+      });
+      console.log("route 1")
+    }
+    else {
+
       if (this.state.score > this.state.highScore) {
         this.setState({
           friends,
@@ -27,7 +38,7 @@ class App extends Component {
           score: 0,
           message: "New high score!  Try again!"
         });
-        console.log("route 1")
+        console.log("route 3")
       }
       else {
         this.setState({
@@ -40,26 +51,13 @@ class App extends Component {
 
       }
     }
-    else {
-      this.setState({
-        friends,
-        notSelected: this.state.notSelected.filter(friend => friend.id !== id),
-        score: this.state.score + 1,
-        message: "Correct!"
-      });
-      console.log("route 3")
-    }
-
-
-
     this.state.friends.sort(() => Math.random() - 0.5)
-
   }
 
   render() {
     return (
       <div>
-        <TitleCard highScore={this.state.highScore} score={this.state.score} message={this.state.message}/>
+        <TitleCard highScore={this.state.highScore} score={this.state.score} message={this.state.message} />
         <Wrapper>
           {this.state.friends.map(friend => (
             <FriendCard id={friend.id} onClick={this.onClick} key={friend.id} name={friend.name} image={friend.image} />
