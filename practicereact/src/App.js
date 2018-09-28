@@ -49,6 +49,9 @@ class App extends Component {
       });
       console.log("route 3")
     }
+
+
+
     this.state.friends.sort(() => Math.random() - 0.5)
 
   }
@@ -59,7 +62,7 @@ class App extends Component {
         <TitleCard highScore={this.state.highScore} score={this.state.score} message={this.state.message}/>
         <Wrapper>
           {this.state.friends.map(friend => (
-            <FriendCard id={friend.id} name={friend.name} image={friend.image} onClick={this.onClick} key={friend.id}/>
+            <FriendCard id={friend.id} onClick={this.onClick} key={friend.id} name={friend.name} image={friend.image} />
           ))}
         </Wrapper>
       </div>
