@@ -9,7 +9,7 @@ import "./App.css";
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends: friends,
+    friends,
     notSelected: friends,
     score: 0,
     highScore: 0,
@@ -21,7 +21,7 @@ class App extends Component {
     if (selectedId === undefined) {
       if (this.state.score > this.state.highScore) {
         this.setState({
-          friends: friends,
+          friends,
           notSelected: friends,
           highScore: this.state.score,
           score: 0,
@@ -31,7 +31,7 @@ class App extends Component {
       }
       else {
         this.setState({
-          friends: friends,
+          friends,
           score: 0,
           notSelected: friends,
           message: "You lost - try again!"
@@ -42,7 +42,7 @@ class App extends Component {
     }
     else {
       this.setState({
-        friends: friends,
+        friends,
         notSelected: this.state.notSelected.filter(friend => friend.id !== id),
         score: this.state.score + 1,
         message: "Correct!"
